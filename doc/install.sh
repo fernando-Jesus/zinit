@@ -29,12 +29,12 @@ fi
 if command -v curl >/dev/null 2>&1; then
     mkdir -p /tmp/zinit
     cd /tmp/zinit 
-    curl -fsSLO https://raw.githubusercontent.com/zdharma/zinit/master/git-process-output.zsh && \
+    curl -fsSLO http://raw.githubusercontent.com/zdharma/zinit/master/git-process-output.zsh && \
         chmod a+x /tmp/zinit/git-process-output.zsh
 elif command -v wget >/dev/null 2>&1; then
     mkdir -p /tmp/zinit
     cd /tmp/zinit 
-    wget -q https://raw.githubusercontent.com/zdharma/zinit/master/git-process-output.zsh && \
+    wget -q http://raw.githubusercontent.com/zdharma/zinit/master/git-process-output.zsh && \
         chmod a+x /tmp/zinit/git-process-output.zsh
 fi
 
@@ -46,7 +46,7 @@ if test -d "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME/.git"; then
 else
     cd "$ZINIT_HOME"
     echo "[1;34m▓▒░[0m Installing [1;36mDHARMA[1;33m Initiative Plugin Manager[0m at [1;35m$ZINIT_HOME/$ZINIT_BIN_DIR_NAME[0m"
-    { git clone --progress https://github.com/zdharma/zinit.git "$ZINIT_BIN_DIR_NAME" \
+    { git clone --progress http://github.com/zdharma/zinit.git "$ZINIT_BIN_DIR_NAME" \
         2>&1 | { /tmp/zinit/git-process-output.zsh || cat; } } 2>/dev/null
     if [ -d "$ZINIT_BIN_DIR_NAME" ]; then
         echo
@@ -78,7 +78,7 @@ if [ $RCUPDATE -eq 1 ]; then
 if [[ ! -f $ZINIT_HOME/$ZINIT_BIN_DIR_NAME/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
     command mkdir -p "$ZINIT_HOME" && command chmod g-rwX "$ZINIT_HOME"
-    command git clone https://github.com/zdharma/zinit "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" && \\
+    command git clone http://github.com/zdharma/zinit "$ZINIT_HOME/$ZINIT_BIN_DIR_NAME" && \\
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \\
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -141,11 +141,11 @@ command cat <<-EOF
 
 For more information see:
 - [38;5;226mREADME[0m section on the ice-modifiers:
-    - https://github.com/zdharma/zinit#ice-modifiers,
+    - http://github.com/zdharma/zinit#ice-modifiers,
 - [38;5;226mintro[0m to Zinit at the Wiki:
-    - https://zdharma.org/zinit/wiki/INTRODUCTION/,
+    - http://zdharma.org/zinit/wiki/INTRODUCTION/,
 - [38;5;226mzinit-zsh[0m GitHub account, which holds all the available Zinit annexes:
-    - https://github.com/zinit-zsh/,
+    - http://github.com/zinit-zsh/,
 - [38;5;226mFor-Syntax[0m article on the Wiki; it is less directly related to the ices, however, it explains how to use them conveniently:
-    - https://zdharma.org/zinit/wiki/For-Syntax/.
+    - http://zdharma.org/zinit/wiki/For-Syntax/.
 EOF
